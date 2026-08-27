@@ -60,10 +60,11 @@ keymap = [
         ["CapsLock", "A", "S" , "D" , "F" ,"G" ,"H" ,"J","K","L","Scln", "Qoute","ent"],
         ["LShift" , "Y" ,"X" , "C" , "V" , "B", "N","M" ,"comma", "dot" ,"slsh","RShift" , "Up"],
         ["LCtrl" ,"LGui","LAlt","spc", "RAlt","MO(1)","RCtrl","Left","Down", "Right" ],
+    ],
     [
         ["_", "mute", "vold", "volu","brid" , "briu" , "lpad" , "mctl" , "mnxt" , "mprv" , "mstp" ,"mply" ,"cpnl"],
         ["_", "_", "_", "_","_","€","_","_","_","_","_","_","_","del"],
-        ["_", "_", "_","_","_","_","_","ü","_","ö",],
+        ["_", "_", "_","_","_","_","_","ü","_","ö"],
         ["_", "ä", "_"]
     ],
 ]
