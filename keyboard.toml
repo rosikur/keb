@@ -34,8 +34,7 @@ phase = "resolution"
 #   detent = 30, pulse = 15 → resolution = (15 × 4) / 30 = 2
 resolution = 2
 
-# Or you can specify detent and pulse to calculate resolution automatically
-resolution = { detent = 30, pulse = 15 }
+
 
 # Whether the direction of the rotary encoder is reversed.
 reverse = false
