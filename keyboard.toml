@@ -53,15 +53,15 @@ cols = 14
 layers = 2
 keymap = [
     [
-        ["Esc", "F1", "F2","F3","F4", "F5","F6" ,"F7" , "F8" , "F9","F10", "F11" , "F12"],
+        ["Esc", "F1", "F2","F3","F4", "F5","F6" ,"F7" , "F8" , "F9","F10", "F11" , "F12","_"],
         ["Grv", "1", "2", "3" , "4" , "5","6","7","8","9" ,"0", "mins" , "eql", "bspc"],
         ["Tab", "Q", "W", "E" ,"R","T", "Z" ,"U" , "I" , "O" , "P","LeftBracket" , "RightBracket" , "bsls" ],
-        ["CapsLock", "A", "S" , "D" , "F" ,"G" ,"H" ,"J","K","L","Scln", "Qoute","ent"],
-        ["LShift" , "Y" ,"X" , "C" , "V" , "B", "N","M" ,"comma", "dot" ,"slsh","RShift" , "Up"],
-        ["LCtrl" ,"LGui","LAlt","spc", "RAlt","MO(1)","RCtrl","Left","Down", "Right" ],
+        ["CapsLock", "A", "S" , "D" , "F" ,"G" ,"H" ,"J","K","L","Scln", "Qoute","ent","_"],
+        ["LShift" , "Y" ,"X" , "C" , "V" , "B", "N","M" ,"comma", "dot" ,"slsh","RShift" , "Up","_"],
+        ["LCtrl" ,"LGui","LAlt","spc", "RAlt","MO(1)","RCtrl","Left","Down", "Right","_","_","_","_" ],
     ],
     [
-        ["_", "mute", "vold", "volu","brid" , "briu" , "lpad" , "mctl" , "mnxt" , "mprv" , "mstp" ,"mply" ,"cpnl"],
+        ["_", "mute", "vold", "volu","brid" , "briu" , "lpad" , "mctl" , "mnxt" , "mprv" , "mstp" ,"mply" ,"cpnl","_"],
         ["_", "_", "_", "_","_","€","_","_","_","_","_","_","_","del"],
         ["_", "_", "_","_","_","_","_","ü","_","ö","_","_","_","_"],
         ["_", "ä", "_", "_","_","_","_","_","_","_","_","_","_","_"],
