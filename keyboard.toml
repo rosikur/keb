@@ -7,29 +7,65 @@ product_id = 0x4643
 manufacturer = "RMK"
 chip = "rp2040"
 
+[[input_device.encoder]]
+pin_a = "P0_30"
+pin_b = "P0_31"
+
+# Whether to use the MCU's internal pull-up resistor, default to false
+internal_pullup = true
+
+# Working mode of the encoder
+# Available modes:
+# - default: resolution = 1
+# - resolution: custom resolution, requires specifying resolution and reverse parameters
+phase = "resolution"
+
+# `resolution` represents the number of steps generated per detent.
+#
+# When your encoder datasheet lists:
+#   - detent = number of mechanical detents per full rotation
+#   - pulse  = number of full quadrature cycles (A/B cycles) per full rotation
+#
+# Then the relationship is:
+#   resolution = (pulse × 4) / detent
+# because each full quadrature cycle (pulse) produces 4 edge transitions.
+#
+# For example — in the ALPS EC11E series (https://tech.alpsalpine.com/cms.media/product_catalog_ec_01_ec11e_en_611f078659.pdf):
+#   detent = 30, pulse = 15 → resolution = (15 × 4) / 30 = 2
+resolution = 2
+
+# Or you can specify detent and pulse to calculate resolution automatically
+resolution = { detent = 30, pulse = 15 }
+
+# Whether the direction of the rotary encoder is reversed.
+reverse = false
+
 [matrix]
 # Row and col pins are mandatory
-row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-col_pins = ["PIN_19", "PIN_20", "PIN_21"]
+row_pins = ["PIN_1", "PIN_2", "PIN_4", "PIN_5" , "Pin_6" , "PIN_31"]
+col_pins = ["PIN_7", "PIN_9", "PIN_10" , "PIN_11","PIN_12","PIN_14","PIN_15","PIN_16","PIN_17","PIN_19","PIN_20","PIN_21","PIN_22","PIN_24","PIN_25",]
 
 # RMK uses col2row as the default matrix diode direction, if you want to use a row2col matrix, add `row2col = true`
 # row2col = true
 
 [layout]
-rows = 4
-cols = 3
+rows = 5
+cols = 14
 layers = 2
 keymap = [
     [
-        ["A", "B", "C"],
-        ["Kc1", "Kc2", "Kc3"],
-        ["LCtrl", "MO(1)", "LShift"],
-        ["OSL(1)", "LT(2, Kc9)", "LM(1, LShift | LGui)"]
-    ],
+        ["Esc", "F1", "F2","F3","F4", "F5","F6" ,"F7" , "F8" , "F9","F10", "F11" , "F12"],
+        ["Grv", "1", "2", "3" , "4" , "5","6","7","8","9" ,"0", "mins" , "eql", "bspc"],
+        ["Tab", "Q", "W", "E" ,"R","T", "Z" ,"U" , "I" , "O" , "P","LeftBracket" , "RightBracket" , "bsls" ],
+        ["CapsLock", "A", "S" , "D" , "F" ,"G" ,"H" ,"J","K","L","Scln", "Qoute","ent"],
+        ["LShift" , "Y" ,"X" , "C" , "V" , "B", "N","M" ,"comma", "dot" ,"slsh","RShift" , "Up"],
+        ["LCtrl" ,"LGui","LAlt","spc", "RAlt","MO(1)","RCtrl","Left","Down", "Right" ],
     [
-        ["_", "TT(1)", "TG(2)"],
-        ["_", "_", "_"],
-        ["_", "_", "_"],
-        ["_", "_", "_"]
+        ["_", "mute", "vold", "volu","brid" , "briu" , "lpad" , "mctl" , "mnxt" , "mprv" , "mstp" ,"mply" ,"cpnl"],
+        ["_", "_", "_", "_","_","€","_","_","_","_","_","_","_","del"],
+        ["_", "_", "_","_","_","_","_","ü","_","ö",],
+        ["_", "ä", "_"]
     ],
 ]
+encoder_map = [
+  [["AudioVolUp", "AudioVolDown"]]
